@@ -1,163 +1,270 @@
-/* FeaturedWeddings.css - Ultra Premium Photography Studio */
 .featured-weddings {
-  position: relative;
+  padding: 80px 0;
+  background: var(--ivory);
 }
 
-.featured-weddings::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-1), transparent);
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-/* Main Featured Wedding */
-.featured-main-wedding {
-  margin-bottom: 8rem;
+.section-title {
+  font-family: var(--display-font);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 15px;
 }
 
-.featured-grid {
+.section-title .gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Featured Main */
+.featured-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-main {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-/* Featured Image Container */
 .featured-image-container {
   position: relative;
-}
-
-.featured-image-wrapper {
-  position: relative;
   overflow: hidden;
-  margin-bottom: 2rem;
-  aspect-ratio: 4/5;
+  aspect-ratio: 16/9;
 }
 
 .featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: var(--transition-smooth);
 }
 
-.featured-image-wrapper:hover .featured-image {
-  transform: scale(1.03);
+.featured-image-container:hover .featured-image {
+  transform: scale(1.05);
 }
 
 .image-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wedding-couple {
+  font-family: var(--serif-font);
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.wedding-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.nav-controls {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
   pointer-events: none;
 }
 
-.overlay-gradient {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.5), transparent);
-}
-
-.image-count {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 0.8rem 1.2rem;
-  color: var(--text-light);
-  font-family: var(--display-font);
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  border-left: 2px solid var(--gold-1);
-}
-
-.current-image {
-  font-size: 1.2rem;
-  color: var(--gold-1);
-}
-
-.total-images {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Navigation Arrows */
-.nav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.nav-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
   width: 50px;
   height: 50px;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: var(--text-light);
-  border-radius: 0;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.nav-btn:hover {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+}
+
+.image-counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  font-family: var(--display-font);
+}
+
+.current {
+  font-size: 24px;
+  color: var(--gold-2);
+}
+
+.total {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* Featured Details */
+.featured-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.wedding-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.wedding-type {
+  background: var(--gold-gradient-light);
+  color: var(--gold-2);
+  padding: 5px 15px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.wedding-description {
+  line-height: 1.8;
+  color: var(--text-gray);
+  flex: 1;
+}
+
+.wedding-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid rgba(255, 193, 7, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--display-font);
+  font-size: 28px;
+  color: var(--gold-2);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-gray);
+}
+
+.view-gallery-btn {
+  background: transparent;
+  border: 1px solid var(--gold-2);
+  color: var(--gold-2);
+  padding: 15px 30px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: var(--transition-smooth);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  gap: 10px;
 }
 
-.nav-arrow:hover {
-  background: var(--gold-1);
-  color: var(--obsidian);
-  border-color: var(--gold-1);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.prev-arrow {
-  left: 2rem;
-}
-
-.next-arrow {
-  right: 2rem;
+.view-gallery-btn:hover {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border-color: transparent;
 }
 
 /* Thumbnails */
-.wedding-thumbnails {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 0.5rem 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold-1) transparent;
+.featured-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-.wedding-thumbnails::-webkit-scrollbar {
-  height: 4px;
-}
-
-.wedding-thumbnails::-webkit-scrollbar-thumb {
-  background: var(--gold-gradient);
-  border-radius: 2px;
-}
-
-.thumbnail-item {
-  flex: 0 0 80px;
-  height: 80px;
+.thumbnail {
   position: relative;
+  aspect-ratio: 1;
   cursor: pointer;
   overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: var(--transition-smooth);
-  border: 2px solid transparent;
 }
 
-.thumbnail-item:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-  transform: translateY(-5px);
+.thumbnail:hover img {
+  transform: scale(1.1);
 }
 
-.thumbnail-item.active {
-  border-color: var(--gold-1);
+.thumbnail.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid var(--gold-2);
+  z-index: 1;
 }
 
 .thumbnail-overlay {
@@ -166,384 +273,72 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to top, rgba(212, 175, 55, 0.3), transparent);
-  opacity: 0;
-  transition: var(--transition-smooth);
-}
-
-.thumbnail-item:hover .thumbnail-overlay {
-  opacity: 1;
-}
-
-.thumbnail-item.active .thumbnail-overlay {
-  opacity: 1;
-  background: linear-gradient(to top, rgba(212, 175, 55, 0.5), transparent);
-}
-
-/* Wedding Details */
-.wedding-details {
-  padding-top: 2rem;
-}
-
-.details-header {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.wedding-category {
-  display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.wedding-couple {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-/* Wedding Info */
-.wedding-info {
-  margin-bottom: 3rem;
-}
-
-.info-item {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  transition: var(--transition-smooth);
-}
-
-.info-item:hover {
-  border-bottom-color: var(--gold-1);
-}
-
-.info-icon {
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-  flex-shrink: 0;
-}
-
-.info-content {
-  flex: 1;
-}
-
-.info-label {
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-family: var(--display-font);
-  font-weight: 300;
-}
-
-.info-value {
-  font-size: 1.1rem;
-  font-weight: 300;
-  line-height: 1.6;
-}
-
-/* CTA Buttons */
-.featured-cta {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.view-gallery-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-icon {
-  font-size: 1rem;
-  transition: var(--transition-smooth);
-}
-
-.view-gallery-btn:hover .btn-icon {
-  transform: translateX(5px);
-}
-
-/* Wedding Stats */
-.wedding-stats {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-  background: var(--parchment);
-  border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.stat {
-  text-align: center;
-  flex: 1;
-}
-
-.stat-number {
-  font-family: var(--serif-font);
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-family: var(--display-font);
-}
-
-.stat-divider {
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.3), transparent);
-}
-
-/* Additional Weddings Grid */
-.weddings-grid-section {
-  margin-top: 8rem;
-  padding-top: 4rem;
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.grid-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-.grid-title {
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: -0.5px;
-}
-
-.view-all-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  background: none;
-  border: none;
-  color: var(--gold-1);
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  font-family: var(--display-font);
-  font-weight: 300;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid transparent;
-}
-
-.view-all-btn:hover {
-  gap: 1.2rem;
-  border-bottom-color: var(--gold-1);
-}
-
-/* Weddings Grid */
-.wedding-grid-card {
-  padding: 0;
-  overflow: hidden;
-}
-
-.wedding-grid-card:hover {
-  transform: translateY(-10px);
-}
-
-.grid-card-image {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
-.grid-card-image img {
-  transition: var(--transition-smooth);
-}
-
-.wedding-grid-card:hover .grid-card-image img {
-  transform: scale(1.1);
-}
-
-.grid-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent 50%);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  opacity: 0;
-  transition: var(--transition-smooth);
-}
-
-.wedding-grid-card:hover .grid-card-overlay {
-  opacity: 1;
-}
-
-.grid-card-content {
-  margin-bottom: 1.5rem;
-}
-
-.grid-couple {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.grid-venue {
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  font-weight: 300;
-}
-
-.grid-view-btn {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  width: 40px;
-  height: 40px;
-  background: var(--gold-gradient);
-  color: var(--obsidian);
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  transition: var(--transition-smooth);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(-10px);
+  color: white;
   opacity: 0;
+  transition: var(--transition-smooth);
 }
 
-.wedding-grid-card:hover .grid-view-btn {
-  transform: translateY(0);
+.thumbnail:hover .thumbnail-overlay {
   opacity: 1;
 }
 
-.grid-view-btn:hover {
-  transform: scale(1.1);
-}
-
-.grid-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem 1.5rem;
-}
-
-.grid-category {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-family: var(--display-font);
-}
-
-.grid-date {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  font-weight: 300;
-}
-
 /* Responsive */
-@media (max-width: 1400px) {
-  .featured-grid {
-    gap: 3rem;
-  }
-}
-
 @media (max-width: 1200px) {
-  .featured-grid {
+  .featured-main {
     grid-template-columns: 1fr;
-    gap: 4rem;
   }
   
-  .featured-image-wrapper {
-    aspect-ratio: 16/9;
-  }
-  
-  .wedding-couple {
-    font-size: 2.5rem;
+  .featured-details {
+    padding: 0 20px;
   }
 }
 
-@media (max-width: 968px) {
-  .featured-main-wedding {
-    margin-bottom: 6rem;
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 36px;
   }
   
-  .weddings-grid-section {
-    margin-top: 6rem;
-    padding-top: 3rem;
+  .featured-thumbnails {
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  .grid-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-  
-  .weddings-grid {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .featured-image-wrapper {
-    aspect-ratio: 4/5;
-  }
-  
-  .nav-arrow {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .image-count {
-    top: 1rem;
-    right: 1rem;
-    padding: 0.6rem 1rem;
-  }
-  
-  .wedding-couple {
-    font-size: 2rem;
-  }
-  
-  .wedding-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .stat-divider {
+  .nav-controls {
     display: none;
   }
 }
 
+@media (max-width: 768px) {
+  .featured-weddings {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .wedding-couple {
+    font-size: 24px;
+  }
+  
+  .featured-main {
+    gap: 30px;
+  }
+  
+  .image-overlay {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 480px) {
-  .featured-cta {
-    gap: 1rem;
+  .featured-thumbnails {
+    grid-template-columns: 1fr;
   }
   
-  .wedding-thumbnails {
-    gap: 0.8rem;
-  }
-  
-  .thumbnail-item {
-    flex: 0 0 60px;
-    height: 60px;
+  .wedding-stats {
+    grid-template-columns: 1fr;
   }
 }
