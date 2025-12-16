@@ -1,0 +1,121 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 220px;
+  padding-bottom: 80px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) grayscale(20%);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-family: var(--serif-font);
+  font-size: 5.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 3rem;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title .highlight {
+  font-weight: 500;
+  display: block;
+}
+
+.hero-title .highlight-word {
+  font-weight: 500;
+}
+
+.hero-title .sub-line {
+  display: block;
+  font-weight: 300;
+}
+
+.hero-cta-btn {
+  background: var(--gold-gradient);
+  color: var(--obsidian);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 400;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero-cta-btn:hover {
+  background: #c9a530;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 968px) {
+  .hero {
+    padding-top: 180px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 150px;
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
