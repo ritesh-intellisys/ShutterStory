@@ -174,9 +174,12 @@
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 8px;
 }
 
 .wedding-description {
+  font-family: cursive;
+  font-size: 18px;
   line-height: 1.8;
   color: var(--text-gray);
   flex: 1;
@@ -188,7 +191,8 @@
   gap: 20px;
   padding: 20px;
   background: white;
-  border: 1px solid rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 1);
+  border-radius: 10px;
 }
 
 .stat {
@@ -210,9 +214,9 @@
 }
 
 .view-gallery-btn {
-  background: transparent;
-  border: 1px solid var(--gold-2);
-  color: var(--gold-2);
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  border-color: transparent;
   padding: 15px 30px;
   font-size: 13px;
   letter-spacing: 1.5px;
@@ -226,9 +230,11 @@
 }
 
 .view-gallery-btn:hover {
-  background: var(--gold-gradient);
-  color: var(--text-dark);
-  border-color: transparent;
+  
+
+  background: transparent;
+  border: 2px solid var(--gold-2);
+  color: var(--gold-2);
 }
 
 /* Thumbnails */

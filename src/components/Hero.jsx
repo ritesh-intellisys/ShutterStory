@@ -31,7 +31,7 @@ const Hero = () => {
             
             <p className="hero-subtitle">
               Preserving your precious moments with artistic vision, technical excellence, 
-              and a deep understanding of Indian wedding traditions since 2005.
+              and a deep understanding of Indian wedding traditions since 2020.
             </p>
             
             <div className="hero-buttons">
