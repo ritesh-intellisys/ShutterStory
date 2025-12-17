@@ -219,7 +219,8 @@
   color: var(--text-dark);
   font-size: 24px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 10000;
+  position: relative;
 }
 
 .navbar:not(.scrolled) .mobile-menu-btn {
@@ -228,6 +229,11 @@
 
 .navbar.scrolled .mobile-menu-btn {
   color: var(--text-light);
+}
+
+/* Close button (X icon) should be gray when menu is open */
+.navbar.menu-open .mobile-menu-btn {
+  color: var(--text-gray) !important;
 }
 
 /* Mobile Menu */
@@ -239,18 +245,23 @@
   bottom: 0;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: var(--transition-smooth);
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .mobile-menu.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-content {
