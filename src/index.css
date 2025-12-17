@@ -18,6 +18,7 @@
   --gold-gradient-light: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
   --dark-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   --saffron-gradient: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
+  --premium-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 25%, #24243e 50%, #1a1a2e 75%, #16213e 100%);
   
   /* Typography */
   --serif-font: 'Playfair Display', 'Times New Roman', serif;
@@ -43,6 +44,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -51,17 +55,40 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 25px;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
   }
 }
 
